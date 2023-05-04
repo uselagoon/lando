@@ -89,6 +89,7 @@ Lando will read and interpret your normal `.lagoon.yml` and its associated Docke
 The services we currently support with links to their associated Lagoon docs is shown below:
 
 * [Elasticsearch](https://docs.lagoon.sh/lagoon/docker-images/elasticsearch)
+* [Opensearch](https://docs.lagoon.sh/lagoon/docker-images/opensearch)
 * [PHP-FPM](https://docs.lagoon.sh/lagoon/docker-images/php-fpm)
 * [PHP CLI](https://docs.lagoon.sh/lagoon/docker-images/php-cli)
 * [Nginx](https://docs.lagoon.sh/lagoon/docker-images/nginx)
