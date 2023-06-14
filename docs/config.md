@@ -95,6 +95,7 @@ The services we currently support with links to their associated Lagoon docs is 
 * [MariaDB](https://docs.lagoon.sh/lagoon/docker-images/mariadb)
 * [PostgreSQL](https://docs.lagoon.sh/lagoon/docker-images/postgres)
 * [Redis](https://docs.lagoon.sh/lagoon/docker-images/redis)
+* [Ruby](https://docs.lagoon.sh/docker-images/ruby/)
 * [Solr](https://docs.lagoon.sh/lagoon/docker-images/solr)
 * [Varnish](https://docs.lagoon.sh/lagoon/docker-images/varnish)
 
