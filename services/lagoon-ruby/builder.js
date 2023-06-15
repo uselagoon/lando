@@ -21,6 +21,7 @@ module.exports = {
       // Build ruby
       const ruby = {
         command: options.command,
+        ports: [options.port],
       };
 
       // Add in the ruby service and push downstream
