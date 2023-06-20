@@ -9,9 +9,9 @@ module.exports = {
   config: {
     version: 'custom',
     confSrc: __dirname,
-    command: '/sbin/tini -- /lagoon/entrypoints.sh bundle exec puma -C config/puma.rb',
+    command: 'ruby',
     port: '3000',
-    moreHttpPorts: ['3000'],
+    moreHttpPorts: [],
   },
   parent: '_lagoon',
   builder: (parent, config) => class LandoLagoonRuby extends parent {
@@ -20,10 +20,10 @@ module.exports = {
 
       // Build ruby
       const ruby = {
-        command: options.command,
+        command: `/sbin/tini -- /lagoon/entrypoints.sh ${options.command}`,
         ports: [options.port],
       };
-
+      options.moreHttpPorts.push(options.port);
       // Add in the ruby service and push downstream
       super(id, options, {services: _.set({}, options.name, ruby)});
     };
