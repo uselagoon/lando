@@ -10,7 +10,7 @@ jobs:
       TERM: xterm
     strategy:
       matrix:
-        leia-tests:
+        leia-test:
           - examples/drupal9-base
         lando-version:
           - 3-dev
@@ -51,10 +51,15 @@ jobs:
           sudo apt-get remove mysql-server --purge
           sudo apt-get install apparmor-profiles
           sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
+      - name: Check tests are ok
+        run: |
+          ls -al ./examples/drupal9-base  
+          cat ./examples/drupal9-base/README.md
+          cat ./${{ matrix.leia-test }}/README.md
       - name: Run Leia Tests
         uses: lando/run-leia-action@v2
         with:
-          leia-test: "./${{ matrix.leia-tests }}/README.md"
+          leia-test: "./${{ matrix.leia-test }}/README.md"
           cleanup-header: "Destroy tests"
           retry: 3
           shell: bash
